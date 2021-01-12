@@ -77,13 +77,14 @@ app.post("/api/notes", function(req, res) {
 });
 
 // DELETE a note
-// app.delete("/api/notes/:id", function(req, res) {
-//     var data = fs.readFileSync("db/db.json");
-//     var notes = JSON.parse(data);
-//     notes = notes.filter(notes => notes.id !== parseInt(req.params.id));
+app.delete("/api/notes/:id", function(req, res) {
+    var data = fs.readFileSync("db/db.json");
+    var notes = JSON.parse(data);
+    notes = notes.filter(notes => notes.id !== parseInt(req.params.id));
 
-    // Figure out how to re-save notes again to the file
+    //Figure out how to re-save notes again to the file
     // const json = JSON.stringify(notes);
+    // res.json(notes);  
 
     // fs.writeFile("db/db.json", json, "utf8", function(err) {
     //     if (err) {
@@ -93,7 +94,8 @@ app.post("/api/notes", function(req, res) {
     //         res.sendStatus(200);
     //     }
     // });
-// });
+      
+});
 
 
 // Listen
