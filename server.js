@@ -40,7 +40,7 @@ app.post("/api/notes", function(req, res) {
         else {
             const file = JSON.parse(data);
             // console.log(file);
-            var id = file.length ? (file[file.length -1].id + 1) : 0;
+            var id = file.length ? (file[file.length -1].id + 1) : 1;
             file.push({title: req.body.title, text: req.body.text, id});
 
             const json = JSON.stringify(file);
