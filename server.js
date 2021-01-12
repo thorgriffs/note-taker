@@ -54,7 +54,7 @@ app.post("/api/notes", function(req, res) {
         }
         else {
             const file = JSON.parse(data);
-            console.log(file);
+            // console.log(file);
             var id = file.length ? (file[file.length -1].id + 1) : 0;
             file.push({title: req.body.title, text: req.body.text, id});
 
@@ -68,6 +68,10 @@ app.post("/api/notes", function(req, res) {
                     console.log(file);
                 }
             });
+            // var data = fs.readFileSync("db/db.json");
+            var notes = JSON.parse(data);
+            console.log(notes);
+            res.json(notes);
         }
     });
 });
